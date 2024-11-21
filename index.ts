@@ -1,20 +1,18 @@
 /// <reference path="node_modules/excalibur/build/dist/excalibur.d.ts" />
+/// <reference path="configs/screenConfig.ts" />
+
 
 const game = new ex.Engine({
-    width: 300,
-    height: 300,
+    height: 500,
+    width: 800,
     canvasElementId: 'game'
 });
 const basicActor = new ex.Actor({
     name: "basicActor",
-    width: 50,
-    height: 30,
-    color: ex.Color.Chartreuse
+    width: 400,
+    height: 400,
+    color: ex.Color.Chartreuse,
+    pos: ex.vec(800 / 2, 500 / 2)
 });
-basicActor.actions.repeatForever((builder => {
-    builder.moveBy(ex.vec(100, 100), 10);
-    builder.moveBy(ex.vec(-100, -100), 10);
-
-}));
 game.add(basicActor);
 game.start();
