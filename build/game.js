@@ -9,10 +9,10 @@ var phyxels;
     phyxels.ScreenConfig = ScreenConfig;
 })(phyxels || (phyxels = {}));
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="configs/ScreenConfig.ts"/>
+/// <reference path="src/configs/ScreenConfig.ts"/>
 var phyxels;
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="configs/ScreenConfig.ts"/>
+/// <reference path="src/configs/ScreenConfig.ts"/>
 (function (phyxels) {
     const game = new ex.Engine({
         height: phyxels.ScreenConfig.height,

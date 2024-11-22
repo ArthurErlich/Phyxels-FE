@@ -1,6 +1,6 @@
 
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="configs/ScreenConfig.ts"/>
+/// <reference path="src/configs/ScreenConfig.ts"/>
 namespace phyxels {
 
     const game = new ex.Engine({
