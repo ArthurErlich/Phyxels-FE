@@ -2,6 +2,10 @@
 *22.11.2024*
 ---
 
+## Engine Konzept
+
+[GameEngine](https://excaliburjs.com/docs/engine)
+
 ## Links zu wichtigen teilen
 
 ### Tilemaps für das 2D Grid -> Nur Hintergrund
@@ -9,3 +13,7 @@
 
 ### Scnes etc
 [Scenes](https://excaliburjs.com/docs/scenes)
+
+Scenen können genutzt werden um zum Beispiel das Haupt-Menü dort hinzuzufügen. 
+
+![](https://excaliburjs.com/assets/images/SceneLifecycle-f54c57011352c478c15937d5180f5643.png)
