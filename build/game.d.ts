@@ -28,7 +28,7 @@ declare namespace phyxels {
          * onPreUpdate  ():void {}
          * onPostUpdate ():void {}
          */
-        constructor();
+        constructor(pos: ex.Vector);
     }
 }
 declare namespace phyxels {

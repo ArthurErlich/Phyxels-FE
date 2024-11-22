@@ -6,9 +6,10 @@ namespace phyxels {
          * onPostUpdate ():void {}
          */
 
-        constructor() {
+        constructor(pos:ex.Vector) {
             super({
-                color: ex.Color.Yellow
+                color: ex.Color.Yellow,
+                pos: pos
             });
         }
     }

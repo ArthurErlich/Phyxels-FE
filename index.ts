@@ -11,7 +11,15 @@ namespace phyxels {
         canvasElementId: Config.canvas.name
     });
     //TODO:REMOVE DEBUG
-    game.add(new SandElement());
+    let elements: Element[] = new Array();
+
+    for (let i: number = 0; i < 10; i++) {
+        elements[i] = new SandElement(ex.vec(Config.canvas.width / 2 + i * 10, Config.canvas.height / 2 + i * 10));
+    }
+    elements.forEach(element => {
+        game.add(element);
+    });
+    
     game.start();
 
 }

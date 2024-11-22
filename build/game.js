@@ -16,12 +16,17 @@ var phyxels;
          */
         constructor(config) {
             {
-                // let config: ex.ActorArgs ){
-                //     width: Config.grid.size,
-                //     height: Config.grid.size
-                // }
-                // config.width = Config.grid.size,
-                // config.height = Config.grid.size,
+                if (config == undefined) {
+                    let config = {
+                        width: phyxels.Config.grid.size,
+                        height: phyxels.Config.grid.size
+                    };
+                }
+                else {
+                    config.width = phyxels.Config.grid.size;
+                    config.height = phyxels.Config.grid.size;
+                }
+                console.log(config);
                 super(config);
             }
         }
@@ -37,9 +42,10 @@ var phyxels;
          * onPreUpdate  ():void {}
          * onPostUpdate ():void {}
          */
-        constructor() {
+        constructor(pos) {
             super({
-                color: ex.Color.Yellow
+                color: ex.Color.Yellow,
+                pos: pos
             });
         }
     }
@@ -60,7 +66,13 @@ var phyxels;
         canvasElementId: phyxels.Config.canvas.name
     });
     //TODO:REMOVE DEBUG
-    phyxels.game.add(new phyxels.SandElement());
+    let elements = new Array();
+    for (let i = 0; i < 10; i++) {
+        elements[i] = new phyxels.SandElement(ex.vec(phyxels.Config.canvas.width / 2 + i * 10, phyxels.Config.canvas.height / 2 + i * 10));
+    }
+    elements.forEach(element => {
+        phyxels.game.add(element);
+    });
     phyxels.game.start();
 })(phyxels || (phyxels = {}));
 var phyxels;
