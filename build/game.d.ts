@@ -1,20 +1,38 @@
 declare namespace phyxels {
-    class ScreenConfig {
-        static width: number;
-        static height: number;
-        static canvas: string;
+    export class Config {
+        static canvas: Canvas;
+        static grid: Grid;
     }
-}
-declare namespace phyxels {
+    interface Canvas {
+        width: number;
+        height: number;
+        name: string;
+    }
+    interface Grid {
+        size: number;
+    }
+    export {};
 }
 declare namespace phyxels {
     abstract class Element extends ex.Actor {
+        /**
+         * onPreUpdate  ():void {}
+         * onPostUpdate ():void {}
+         */
+        constructor(config?: ex.ActorArgs);
     }
 }
 declare namespace phyxels {
-    class GameConfig {
-        static gridSize: number;
+    class SandElement extends Element {
+        /**
+         * onPreUpdate  ():void {}
+         * onPostUpdate ():void {}
+         */
+        constructor();
     }
+}
+declare namespace phyxels {
+    const game: ex.Engine<any>;
 }
 declare namespace phyxels {
     class Loading {
