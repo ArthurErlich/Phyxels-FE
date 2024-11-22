@@ -15,5 +15,5 @@
 [Scenes](https://excaliburjs.com/docs/scenes)
 
 Scenen können genutzt werden um zum Beispiel das Haupt-Menü dort hinzuzufügen. 
-
+> Nur eine Scene kann gleichzeitig aktiv sein!
 ![](https://excaliburjs.com/assets/images/SceneLifecycle-f54c57011352c478c15937d5180f5643.png)
