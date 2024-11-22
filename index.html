@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Phyxels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/excalibur/build/dist/excalibur.min.js" defer></script>
+    <script src="build/game.js" defer></script>
+    <title>Phyxels</title>
 </head>
+<style>
+    #gameWrap{
+        display: flex;
+        justify-content: center;
+    }
+</style>
 <body>
-              
+    <div id="gameWrap">
+        <canvas id="game"></canvas>
+    </div>
 </body>
+
 </html>

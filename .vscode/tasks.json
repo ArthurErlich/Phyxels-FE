@@ -3,13 +3,13 @@
 	"tasks": [
 		{
 			"type": "typescript",
-			"tsconfig": "Phyxels-FE/tsconfig.json",
+			"tsconfig": "tsconfig.json",
 			"option": "watch",
 			"problemMatcher": [
 				"$tsc-watch"
 			],
 			"group": "build",
-			"label": "tsc: watch - Phyxels-FE/tsconfig.json"
+			"label": "tsc: watch - tsconfig.json"
 		}
 	]
 }
