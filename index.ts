@@ -1,20 +1,25 @@
 
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="src/configs/ScreenConfig.ts"/>
+/// <reference path="src/configs/Config.ts"/>
+/// <reference path="src/actors/SandElement.ts"/>
 namespace phyxels {
 
-    const game = new ex.Engine({
-        height: ScreenConfig.height,
-        width: ScreenConfig.width,
-        canvasElementId: ScreenConfig.canvas
+    //creating new game engine. Global accessible
+    export const game = new ex.Engine({
+        height: Config.canvas.height,
+        width: Config.canvas.width,
+        canvasElementId: Config.canvas.name
     });
-    const basicActor = new ex.Actor({
-        name: "basicActor",
-        width: 400,
-        height: 400,
-        color: ex.Color.Chartreuse,
-        pos: ex.vec(800 / 2, 500 / 2)
+    //TODO:REMOVE DEBUG
+    let elements: Element[] = new Array();
+
+    for (let i: number = 0; i < 10; i++) {
+        elements[i] = new SandElement(ex.vec(Config.canvas.width / 2 + i * 10, Config.canvas.height / 2 + i * 10));
+    }
+    elements.forEach(element => {
+        game.add(element);
     });
-    game.add(basicActor);
+    
     game.start();
+
 }
