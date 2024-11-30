@@ -52,12 +52,12 @@ var phyxels;
     phyxels.SandElement = SandElement;
 })(phyxels || (phyxels = {}));
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="src/configs/Config.ts"/>
-/// <reference path="src/actors/SandElement.ts"/>
+/// <reference path="configs/Config.ts"/>
+/// <reference path="actors/SandElement.ts"/>
 var phyxels;
 //To compile the class bevor it is used. Typescript typical compiles in alphabetical order
-/// <reference path="src/configs/Config.ts"/>
-/// <reference path="src/actors/SandElement.ts"/>
+/// <reference path="configs/Config.ts"/>
+/// <reference path="actors/SandElement.ts"/>
 (function (phyxels) {
     //creating new game engine. Global accessible
     phyxels.game = new ex.Engine({
