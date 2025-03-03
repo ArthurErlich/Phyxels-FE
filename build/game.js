@@ -687,7 +687,7 @@ var phyxels;
     class ColorFactory {
         static colors;
         static loadColors() {
-            fetch('/src/configs/colors.json')
+            fetch('/Phyxels-FE/src/configs/colors.json')
                 .then(response => {
                 if (!response.ok) {
                     throw new Error(`Failed to load colors.json: ${response.statusText}`);
