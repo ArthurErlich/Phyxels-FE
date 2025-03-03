@@ -1,3 +1,7 @@
+canvas {
+    cursor: pointer;
+}
+
 #gameWrap {
     display: flex;
     justify-content: center;
@@ -74,6 +78,17 @@ button .savebutton:hover {
     height: 100px;
 }
 
-canvas {
-    display: none;
+/* Add styles for the dropdown menu */
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#elementSelector {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }

@@ -8,3 +8,5 @@ Phyxels is a WebGPU-driven 2D physics simulation game, made as a final school pr
 - Spring Boot for backend / community features
 - tears, witchcraft and some praying
 
+## local git config
+- `git config http.sslVerify "false"`

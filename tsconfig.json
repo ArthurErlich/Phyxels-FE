@@ -15,5 +15,6 @@
     "sourceMap": true,                      
     "composite": true,    
   },
-  "exclude": ["./build"]
+    "exclude": ["./build"]
+
 }
