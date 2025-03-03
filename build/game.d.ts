@@ -2,7 +2,7 @@ declare namespace phyxels {
     export class Config {
         static canvas: Canvas;
         static grid: Grid;
-        static readonly BACKEND_URL = "http://192.168.10.203:8080";
+        static readonly BACKEND_URL = "http://localhost:8080";
     }
     interface Canvas {
         width: number;

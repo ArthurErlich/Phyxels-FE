@@ -34,7 +34,7 @@ var phyxels;
     class Config {
         static canvas = { width: 800, height: 500, name: "game", color: "#141414" };
         static grid = { size: 10 };
-        static BACKEND_URL = 'http://192.168.10.203:8080';
+        static BACKEND_URL = 'http://localhost:8080';
     }
     phyxels.Config = Config;
 })(phyxels || (phyxels = {}));
