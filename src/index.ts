@@ -1,3 +1,4 @@
+
 /// <reference path="configs/Config.ts"/>
 /// <reference path="actors/elements/Sand.ts"/>
 /// <reference path="actors/elements/Stone.ts"/>
@@ -69,11 +70,11 @@ namespace phyxels {
 
         // Generate between 15-20 clouds
         const numberOfClouds = 15 + Math.floor(Math.random() * 6);
-        
+
         for (let i = 0; i < numberOfClouds; i++) {
             const cloud = document.createElement('div');
             cloud.className = 'cloud';
-            
+
             // Distribute clouds vertically with some randomness
             const topPos = (maxCloudY * (i / numberOfClouds)) + (Math.random() * 50 - 25);
             cloud.style.top = `${Math.min(maxCloudY, Math.max(0, topPos))}px`;
@@ -104,7 +105,7 @@ namespace phyxels {
 
         // Mountain generation
         const mountainContainer = document.querySelector('.mountain-container') as HTMLElement;
-        
+
         function createMountain(type: string, position: number, scale: number, heightOffset: number) {
             const mountain = document.createElement('div');
             mountain.className = type;
@@ -117,7 +118,7 @@ namespace phyxels {
         function generateMountainGroup(startPosition: number) {
             const groupType = Math.random();
             const mountains = [];
-            
+
             if (groupType < 0.33) {
                 // One of each type
                 mountains.push(
@@ -140,13 +141,13 @@ namespace phyxels {
                     createMountain('mountainlarge', startPosition + 35, 0.8 + Math.random() * 0.4, Math.random() * 20)
                 );
             }
-            
+
             return mountains;
         }
 
         function generateMountains() {
             mountainContainer.innerHTML = '';
-            
+
             let position = 5;
             while (position < 85) {
                 if (Math.random() < 0.6) { // 60% chance for a group
@@ -160,34 +161,34 @@ namespace phyxels {
                     mountainContainer.appendChild(mountain);
                     position += 20; // Less space after a single mountain
                 }
-                
+
                 // Add some random spacing
                 position += Math.random() * 10;
             }
         }
-    
+
         generateMountains();
     });
-    
+
     document.addEventListener("DOMContentLoaded", () => {
-      const celestial = (document.getElementsByClassName('celestial') as HTMLCollectionOf<HTMLElement>)[0];
-      if (!celestial) return;
-    
-      // Adjusted start and end positions:
-      const startX = 50;           // 50px from the left edge
-      const startY = 80;           // 80px from the top
-      const endX = window.innerWidth - 150;  // End 150px from the right edge (so the moon isn't too far right)
-      const endY = 80;             // Same vertical position as the start
-    
-      // Adjust the control point for a higher parabolic arc:
-      const controlX = window.innerWidth / 2; // horizontally centered
-      const controlY = -200;       // Negative value lifts the curve higher
-    
-      // Construct the SVG path string using these coordinates.
-      const pathString = `M${startX} ${startY} Q ${controlX} ${controlY}, ${endX} ${endY}`;
-    
-      // Set the offset-path style property for the celestial element.
-      celestial.style.offsetPath = `path("${pathString}")`;
+        const celestial = (document.getElementsByClassName('celestial') as HTMLCollectionOf<HTMLElement>)[0];
+        if (!celestial) return;
+
+        // Adjusted start and end positions:
+        const startX = 50;           // 50px from the left edge
+        const startY = 80;           // 80px from the top
+        const endX = window.innerWidth - 150;  // End 150px from the right edge (so the moon isn't too far right)
+        const endY = 80;             // Same vertical position as the start
+
+        // Adjust the control point for a higher parabolic arc:
+        const controlX = window.innerWidth / 2; // horizontally centered
+        const controlY = -200;       // Negative value lifts the curve higher
+
+        // Construct the SVG path string using these coordinates.
+        const pathString = `M${startX} ${startY} Q ${controlX} ${controlY}, ${endX} ${endY}`;
+
+        // Set the offset-path style property for the celestial element.
+        celestial.style.offsetPath = `path("${pathString}")`;
     });
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -196,19 +197,19 @@ namespace phyxels {
 
         celestialDiv.addEventListener('click', () => {
             if (isThemeChanging) return;
-            
+
             isThemeChanging = true;
-            
+
             // Add animation based on current theme
             const currentTheme = document.body.getAttribute('data-theme');
             const animationName = currentTheme === 'dark' ? 'moveArcReverse' : 'moveArc';
             celestialDiv.style.animation = `${animationName} 1s linear forwards`;
-            
+
             // Set the final offset-distance immediately after animation
             celestialDiv.style.offsetDistance = currentTheme === 'dark' ? '0%' : '100%';
-            
+
             ThemeService.toggleTheme();
-            
+
             // Only reset the isThemeChanging flag, don't reset the animation
             setTimeout(() => {
                 isThemeChanging = false;
@@ -220,7 +221,7 @@ namespace phyxels {
     async function populateSaveSelector() {
         const saveSelector = document.getElementById('saveSelector') as HTMLSelectElement;
         if (!saveSelector) return;
-        
+
         try {
             const saves = await elementService.loadAllSaves() || [];
             saveSelector.innerHTML = '';
