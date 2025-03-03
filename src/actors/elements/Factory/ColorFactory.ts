@@ -3,7 +3,7 @@ namespace phyxels {
         private static colors: any;
 
         public static loadColors(): void {
-            fetch('../../../configs/colors.json')
+            fetch('/Phyxels-FE/src/configs/colors.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Failed to load colors.json: ${response.statusText}`);
